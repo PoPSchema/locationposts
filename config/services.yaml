@@ -1,0 +1,4 @@
+services:
+    PoP\LocationPosts\FieldResolvers\:
+        resource: '../src/FieldResolvers/*'
+        public: true
