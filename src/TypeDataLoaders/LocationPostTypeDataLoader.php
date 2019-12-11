@@ -1,9 +1,9 @@
 <?php
-namespace PoP\LocationPosts\TypeDataResolvers;
+namespace PoP\LocationPosts\TypeDataLoaders;
 
-use PoP\Posts\TypeDataResolvers\PostTypeDataResolver;
+use PoP\Posts\TypeDataLoaders\PostTypeDataLoader;
 
-class LocationPostTypeDataResolver extends PostTypeDataResolver
+class LocationPostTypeDataLoader extends PostTypeDataLoader
 {
     public function getDataFromIdsQuery(array $ids): array
     {

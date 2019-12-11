@@ -2,13 +2,13 @@
 namespace PoP\LocationPosts\TypeResolvers;
 
 use PoP\Posts\TypeResolvers\PostTypeResolver;
-use PoP\LocationPosts\TypeDataResolvers\LocationPostTypeDataResolver;
+use PoP\LocationPosts\TypeDataLoaders\LocationPostTypeDataLoader;
 
 class LocationPostTypeResolver extends PostTypeResolver
 {
-    public function getTypeDataResolverClass(): string
+    public function getTypeDataLoaderClass(): string
     {
-        return LocationPostTypeDataResolver::class;
+        return LocationPostTypeDataLoader::class;
     }
 }
 
