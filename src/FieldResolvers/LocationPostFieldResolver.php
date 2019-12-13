@@ -27,8 +27,8 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-            'cats' => TypeCastingHelpers::combineTypes(SchemaDefinition::TYPE_ARRAY, SchemaDefinition::TYPE_ID),
-            'cat-slugs' => TypeCastingHelpers::combineTypes(SchemaDefinition::TYPE_ARRAY, SchemaDefinition::TYPE_STRING),
+            'cats' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
+            'cat-slugs' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
             'cat-name' => SchemaDefinition::TYPE_STRING,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
