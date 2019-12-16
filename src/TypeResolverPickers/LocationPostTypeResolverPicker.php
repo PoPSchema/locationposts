@@ -14,11 +14,6 @@ class LocationPostTypeResolverPicker extends AbstractTypeResolverPicker
         ];
     }
 
-    public function getSchemaDefinitionObjectNature(): string
-    {
-        return 'is-locationpost';
-    }
-
     public function getTypeResolverClass(): string
     {
         return LocationPostTypeResolver::class;
