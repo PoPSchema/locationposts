@@ -2,7 +2,7 @@
 namespace PoP\LocationPosts\TypeResolverPickers;
 
 use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
-use PoP\Posts\TypeResolvers\PostConvertibleTypeResolver;
+use PoP\Posts\TypeResolvers\PostUnionTypeResolver;
 use PoP\LocationPosts\TypeResolvers\LocationPostTypeResolver;
 
 class LocationPostTypeResolverPicker extends AbstractTypeResolverPicker
@@ -10,7 +10,7 @@ class LocationPostTypeResolverPicker extends AbstractTypeResolverPicker
     public static function getClassesToAttachTo(): array
     {
         return [
-            PostConvertibleTypeResolver::class,
+            PostUnionTypeResolver::class,
         ];
     }
 
@@ -18,7 +18,7 @@ class LocationPostTypeResolverPicker extends AbstractTypeResolverPicker
     {
         return 'is-locationpost';
     }
-    
+
     public function getTypeResolverClass(): string
     {
         return LocationPostTypeResolver::class;
