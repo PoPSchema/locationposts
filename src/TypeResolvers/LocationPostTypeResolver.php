@@ -1,17 +1,21 @@
 <?php
 namespace PoP\LocationPosts\TypeResolvers;
 
+use PoP\LocationPosts\Environment;
 use PoP\Posts\TypeResolvers\PostTypeResolver;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\LocationPosts\TypeDataLoaders\LocationPostTypeDataLoader;
 
 class LocationPostTypeResolver extends PostTypeResolver
 {
-    public const NAME = 'LocationPost';
+    protected static $name;
 
     public function getTypeName(): string
     {
-        return self::NAME;
+        if (is_null(self::$name)) {
+            self::$name = Environment::getLocationPostTypeName() ?? 'LocationPost';
+        }
+        return self::$name;
     }
 
     public function getSchemaTypeDescription(): ?string
