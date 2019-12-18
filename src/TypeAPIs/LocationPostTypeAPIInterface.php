@@ -13,4 +13,18 @@ interface LocationPostTypeAPIInterface
      * @return boolean
      */
     public function isInstanceOfLocationPostType($object): bool;
+    /**
+     * Get the locationPost with provided ID or, if it doesn't exist, null
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function getLocationPost($id);
+    /**
+     * Indicate if an locationPost with provided ID exists
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function locationPostExists($id): bool;
 }
