@@ -7,6 +7,7 @@ use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\LocationPosts\TypeResolvers\LocationPostTypeResolver;
+use PoP\ComponentModel\GeneralUtils;
 
 class LocationPostFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -69,7 +70,10 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
                 );
 
             case 'cat-name':
-                if ($cat = $typeResolver->resolveValue($resultItem, 'cat', $variables, $expressions, $options)) {
+                $cat = $typeResolver->resolveValue($resultItem, 'cat', $variables, $expressions, $options);
+                if (GeneralUtils::isError($cat)) {
+                    return $cat;
+                } elseif ($cat) {
                     return $taxonomyapi->getTermName($cat, POP_LOCATIONPOSTS_TAXONOMY_CATEGORY);
                 }
                 return null;
