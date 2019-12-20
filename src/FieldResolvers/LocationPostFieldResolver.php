@@ -53,7 +53,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
         switch ($fieldName) {
             case 'cats':
                 return $taxonomyapi->getPostTaxonomyTerms(
-                    $typeResolver->getId($locationpost),
+                    $typeResolver->getID($locationpost),
                     POP_LOCATIONPOSTS_TAXONOMY_CATEGORY,
                     [
                         'return-type' => POP_RETURNTYPE_IDS,
@@ -62,7 +62,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
 
             case 'cat-slugs':
                 return $taxonomyapi->getPostTaxonomyTerms(
-                    $typeResolver->getId($locationpost),
+                    $typeResolver->getID($locationpost),
                     POP_LOCATIONPOSTS_TAXONOMY_CATEGORY,
                     [
                         'return-type' => POP_RETURNTYPE_SLUGS,
