@@ -1,9 +1,12 @@
 <?php
 namespace PoP\LocationPosts;
 
+use PoP\LocationPosts\Environment;
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
+use PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups;
+use PoP\LocationPosts\TypeResolverPickers\Optional\LocationContentEntityPostTypeResolverPicker;
 
 /**
  * Initialize component
@@ -33,6 +36,18 @@ class Component extends AbstractComponent
 
         // Initialize classes
         ContainerBuilderUtils::attachFieldResolversFromNamespace(__NAMESPACE__.'\\FieldResolvers');
-        ContainerBuilderUtils::attachTypeResolverPickersFromNamespace(__NAMESPACE__.'\\TypeResolverPickers');
+        self::attachTypeResolverPickers();
+    }
+
+    /**
+     * If enabled, load the TypeResolverPickers
+     *
+     * @return void
+     */
+    protected static function attachTypeResolverPickers()
+    {
+        if (Environment::addLocationPostTypeToContentEntityUnionTypes()) {
+            LocationContentEntityPostTypeResolverPicker::attach(AttachableExtensionGroups::TYPERESOLVERPICKERS);
+        }
     }
 }
