@@ -1,7 +1,7 @@
 <?php
 namespace PoP\LocationPosts\TypeResolverPickers;
 
-use PoP\Posts\TypeResolvers\ContentEntityUnionTypeResolver;
+use PoP\Content\TypeResolvers\ContentEntityUnionTypeResolver;
 use PoP\LocationPosts\Facades\LocationPostTypeAPIFacade;
 use PoP\LocationPosts\TypeResolvers\LocationPostTypeResolver;
 use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
