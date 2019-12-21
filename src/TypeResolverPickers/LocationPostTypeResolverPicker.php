@@ -1,7 +1,7 @@
 <?php
 namespace PoP\LocationPosts\TypeResolverPickers;
 
-use PoP\Posts\TypeResolvers\PostUnionTypeResolver;
+use PoP\Posts\TypeResolvers\ContentEntityUnionTypeResolver;
 use PoP\LocationPosts\Facades\LocationPostTypeAPIFacade;
 use PoP\LocationPosts\TypeResolvers\LocationPostTypeResolver;
 use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
@@ -11,7 +11,7 @@ class LocationPostTypeResolverPicker extends AbstractTypeResolverPicker
     public static function getClassesToAttachTo(): array
     {
         return [
-            PostUnionTypeResolver::class,
+            ContentEntityUnionTypeResolver::class,
         ];
     }
 
