@@ -2,25 +2,20 @@
 namespace PoP\LocationPosts\TypeDataLoaders;
 
 use PoP\Posts\TypeDataLoaders\PostTypeDataLoader;
+use PoP\LocationPosts\Facades\LocationPostTypeAPIFacade;
 
 class LocationPostTypeDataLoader extends PostTypeDataLoader
 {
-    public function getDataFromIdsQuery(array $ids): array
+    public function getObjects(array $ids): array
     {
-        $query = parent::getDataFromIdsQuery($ids);
-        $query['post-types'] = array(POP_LOCATIONPOSTS_POSTTYPE_LOCATIONPOST);
-        return $query;
+        $locationPostTypeAPI = LocationPostTypeAPIFacade::getInstance();
+        $query = $this->getObjectQuery($ids);
+        return (array)$locationPostTypeAPI->getLocationPosts($query);
     }
 
-    /**
-     * Function to override
-     */
-    public function getQuery($query_args): array
+    public function executeQuery($query, array $options = [])
     {
-        $query = parent::getQuery($query_args);
-
-        $query['post-types'] = array(POP_LOCATIONPOSTS_POSTTYPE_LOCATIONPOST);
-
-        return $query;
+        $locationPostTypeAPI = LocationPostTypeAPIFacade::getInstance();
+        return $locationPostTypeAPI->getLocationPosts($query, $options);
     }
 }
