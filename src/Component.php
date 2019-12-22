@@ -6,7 +6,7 @@ use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
 use PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups;
-use PoP\LocationPosts\TypeResolverPickers\Optional\LocationContentEntityPostTypeResolverPicker;
+use PoP\LocationPosts\TypeResolverPickers\Optional\LocationPostContentEntityTypeResolverPicker;
 
 /**
  * Initialize component
@@ -47,7 +47,7 @@ class Component extends AbstractComponent
     protected static function attachTypeResolverPickers()
     {
         if (Environment::addLocationPostTypeToContentEntityUnionTypes()) {
-            LocationContentEntityPostTypeResolverPicker::attach(AttachableExtensionGroups::TYPERESOLVERPICKERS);
+            LocationPostContentEntityTypeResolverPicker::attach(AttachableExtensionGroups::TYPERESOLVERPICKERS);
         }
     }
 }

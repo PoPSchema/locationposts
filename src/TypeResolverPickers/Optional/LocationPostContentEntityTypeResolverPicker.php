@@ -4,7 +4,7 @@ namespace PoP\LocationPosts\TypeResolverPickers\Optional;
 use PoP\Content\TypeResolvers\ContentEntityUnionTypeResolver;
 use PoP\LocationPosts\TypeResolverPickers\AbstractLocationPostTypeResolverPicker;
 
-class LocationContentEntityPostTypeResolverPicker extends AbstractLocationPostTypeResolverPicker
+class LocationPostContentEntityTypeResolverPicker extends AbstractLocationPostTypeResolverPicker
 {
     public static function getClassesToAttachTo(): array
     {
