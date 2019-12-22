@@ -6,3 +6,11 @@ services:
     PoP\LocationPosts\TypeResolverPickers\:
         resource: '../src/TypeResolverPickers/*'
         public: true
+
+    PoP\LocationPosts\Conditional\Users\FieldResolvers\:
+        resource: '../src/Conditional/Users/FieldResolvers/*'
+        public: true
+
+    PoP\LocationPosts\Conditional\Taxonomies\FieldResolvers\:
+        resource: '../src/Conditional/Taxonomies/FieldResolvers/*'
+        public: true

@@ -1,0 +1,38 @@
+<?php
+namespace PoP\LocationPosts\Conditional\Users\FieldResolvers;
+
+use PoP\Translation\Facades\TranslationAPIFacade;
+use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
+use PoP\LocationPosts\FieldResolvers\AbstractLocationPostFieldResolver;
+use PoP\Users\TypeResolvers\UserTypeResolver;
+
+class LocationPostUserFieldResolver extends AbstractLocationPostFieldResolver
+{
+    public static function getClassesToAttachTo(): array
+    {
+        return array(UserTypeResolver::class);
+    }
+
+    public function getSchemaFieldDescription(TypeResolverInterface $typeResolver, string $fieldName): ?string
+    {
+        $translationAPI = TranslationAPIFacade::getInstance();
+        $descriptions = [
+			'locationposts' => $translationAPI->__('Location Posts by the user', 'locationposts'),
+        ];
+        return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
+    }
+
+    protected function getQuery(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): array {
+
+        $query = parent::getQuery($typeResolver, $resultItem, $fieldName, $fieldArgs);
+
+        $user = $resultItem;
+        switch ($fieldName) {
+            case 'locationposts':
+                $query['authors'] = [$typeResolver->getID($user)];
+                break;
+        }
+
+        return $query;
+    }
+}

@@ -37,6 +37,14 @@ class Component extends AbstractComponent
         // Initialize classes
         ContainerBuilderUtils::attachFieldResolversFromNamespace(__NAMESPACE__.'\\FieldResolvers');
         self::attachTypeResolverPickers();
+
+        // Boot conditionals
+        if (class_exists('\PoP\Taxonomies\Component')) {
+            \PoP\LocationPosts\Conditional\Taxonomies\ComponentBoot::boot();
+        }
+        if (class_exists('\PoP\Users\Component')) {
+            \PoP\LocationPosts\Conditional\Users\ComponentBoot::boot();
+        }
     }
 
     /**
