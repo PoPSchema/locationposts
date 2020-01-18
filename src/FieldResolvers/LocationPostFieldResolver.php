@@ -20,8 +20,8 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     {
         return [
             'cats',
-            'cat-slugs',
-            'cat-name',
+            'catSlugs',
+            'catName',
         ];
     }
 
@@ -29,8 +29,8 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     {
         $types = [
             'cats' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
-            'cat-slugs' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
-            'cat-name' => SchemaDefinition::TYPE_STRING,
+            'catSlugs' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
+            'catName' => SchemaDefinition::TYPE_STRING,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -40,8 +40,8 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
 			'cats' => $translationAPI->__('', ''),
-            'cat-slugs' => $translationAPI->__('', ''),
-            'cat-name' => $translationAPI->__('', ''),
+            'catSlugs' => $translationAPI->__('', ''),
+            'catName' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -60,7 +60,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
                     ]
                 );
 
-            case 'cat-slugs':
+            case 'catSlugs':
                 return $taxonomyapi->getPostTaxonomyTerms(
                     $typeResolver->getID($locationpost),
                     POP_LOCATIONPOSTS_TAXONOMY_CATEGORY,
@@ -69,7 +69,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
                     ]
                 );
 
-            case 'cat-name':
+            case 'catName':
                 $cat = $typeResolver->resolveValue($resultItem, 'cat', $variables, $expressions, $options);
                 if (GeneralUtils::isError($cat)) {
                     return $cat;
