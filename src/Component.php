@@ -30,9 +30,9 @@ class Component extends AbstractComponent
      *
      * @return void
      */
-    public static function boot()
+    public static function prematureBoot()
     {
-        parent::boot();
+        parent::prematureBoot();
 
         // Initialize classes
         ContainerBuilderUtils::registerTypeResolversFromNamespace(__NAMESPACE__.'\\TypeResolvers');
@@ -41,10 +41,10 @@ class Component extends AbstractComponent
 
         // Boot conditionals
         if (class_exists('\PoP\Taxonomies\Component')) {
-            \PoP\LocationPosts\Conditional\Taxonomies\ComponentBoot::boot();
+            \PoP\LocationPosts\Conditional\Taxonomies\ComponentBoot::prematureBoot();
         }
         if (class_exists('\PoP\Users\Component')) {
-            \PoP\LocationPosts\Conditional\Users\ComponentBoot::boot();
+            \PoP\LocationPosts\Conditional\Users\ComponentBoot::prematureBoot();
         }
     }
 
