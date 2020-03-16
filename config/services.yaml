@@ -7,6 +7,10 @@ services:
         resource: '../src/TypeResolverPickers/*'
         public: true
 
+    PoP\LocationPosts\TypeResolvers\:
+        resource: '../src/TypeResolvers/*'
+        public: true
+
     PoP\LocationPosts\Conditional\Users\FieldResolvers\:
         resource: '../src/Conditional/Users/FieldResolvers/*'
         public: true
