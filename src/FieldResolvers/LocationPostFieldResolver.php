@@ -7,7 +7,7 @@ use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\LocationPosts\TypeResolvers\LocationPostTypeResolver;
-use PoP\ComponentModel\GeneralUtils;
+use PoP\ComponentModel\Misc\GeneralUtils;
 
 class LocationPostFieldResolver extends AbstractDBDataFieldResolver
 {
