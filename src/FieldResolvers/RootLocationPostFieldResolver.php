@@ -17,7 +17,7 @@ class RootLocationPostFieldResolver extends AbstractLocationPostFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'posts' => $translationAPI->__('Location Posts in the current site', 'posts-api'),
+			'posts' => $translationAPI->__('Location Posts in the current site', 'locationposts'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
