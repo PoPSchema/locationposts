@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\LocationPosts\Conditional\Taxonomies;
 
 use PoP\ComponentModel\Container\ContainerBuilderUtils;

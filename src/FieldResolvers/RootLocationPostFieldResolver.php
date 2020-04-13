@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\LocationPosts\FieldResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
