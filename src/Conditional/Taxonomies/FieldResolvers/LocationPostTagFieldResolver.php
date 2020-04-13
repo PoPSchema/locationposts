@@ -17,12 +17,13 @@ class LocationPostTagFieldResolver extends AbstractLocationPostFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'locationposts' => $translationAPI->__('Location Posts which contain this tag', 'locationposts'),
+            'locationposts' => $translationAPI->__('Location Posts which contain this tag', 'locationposts'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
 
-    protected function getQuery(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): array {
+    protected function getQuery(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): array
+    {
 
         $query = parent::getQuery($typeResolver, $resultItem, $fieldName, $fieldArgs);
 

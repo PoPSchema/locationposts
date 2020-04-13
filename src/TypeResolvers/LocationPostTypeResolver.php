@@ -29,4 +29,3 @@ class LocationPostTypeResolver extends PostTypeResolver
         return LocationPostTypeDataLoader::class;
     }
 }
-

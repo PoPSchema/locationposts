@@ -15,6 +15,6 @@ class ComponentBoot
      */
     public static function beforeBoot()
     {
-        ContainerBuilderUtils::attachFieldResolversFromNamespace(__NAMESPACE__.'\\FieldResolvers');
+        ContainerBuilderUtils::attachFieldResolversFromNamespace(__NAMESPACE__ . '\\FieldResolvers');
     }
 }

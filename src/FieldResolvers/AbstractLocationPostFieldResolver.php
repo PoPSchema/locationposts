@@ -14,14 +14,14 @@ abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldR
     public static function getFieldNamesToResolve(): array
     {
         return [
-			'locationposts',
+            'locationposts',
         ];
     }
 
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-			'locationposts' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
+            'locationposts' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -30,7 +30,7 @@ abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldR
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'locationposts' => $translationAPI->__('Location Posts', 'locationposts'),
+            'locationposts' => $translationAPI->__('Location Posts', 'locationposts'),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }

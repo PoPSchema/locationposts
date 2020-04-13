@@ -39,7 +39,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'cats' => $translationAPI->__('', ''),
+            'cats' => $translationAPI->__('', ''),
             'catSlugs' => $translationAPI->__('', ''),
             'catName' => $translationAPI->__('', ''),
         ];
