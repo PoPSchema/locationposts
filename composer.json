@@ -28,6 +28,10 @@
         "phpunit/phpunit": ">=7.0",
         "squizlabs/php_codesniffer": "^3.0"
     },
+    "suggest": {
+        "getpop/users": "Integrates well with Users",
+        "getpop/taxonomies": "Integrates well with Taxonomies"
+    },
     "autoload": {
         "psr-4": {
             "PoP\\LocationPosts\\": "src"
