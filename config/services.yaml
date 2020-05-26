@@ -1,16 +1,4 @@
 services:
-    PoP\LocationPosts\FieldResolvers\:
-        resource: '../src/FieldResolvers/*'
-        public: true
-
-    PoP\LocationPosts\TypeResolverPickers\:
-        resource: '../src/TypeResolverPickers/*'
-        public: true
-
-    PoP\LocationPosts\TypeResolvers\:
-        resource: '../src/TypeResolvers/*'
-        public: true
-
     PoP\LocationPosts\Conditional\Users\FieldResolvers\:
         resource: '../src/Conditional/Users/FieldResolvers/*'
         public: true
