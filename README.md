@@ -25,7 +25,9 @@ composer require getpop/locationposts
 Initialize the component:
 
 ``` php
-\PoP\LocationPosts\Component::initialize();
+\PoP\Root\ComponentLoader::initializeComponents([
+    \PoP\LocationPosts\Component::class,
+]);
 ```
 
 ## Standards
