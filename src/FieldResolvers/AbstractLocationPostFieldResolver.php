@@ -11,6 +11,7 @@ use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
+use PoP\LocationPosts\ComponentConfiguration;
 
 abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldResolver
 {
@@ -65,7 +66,7 @@ abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldR
         switch ($fieldName) {
             case 'locationposts':
                 return [
-                    'limit' => -1,
+                    'limit' => ComponentConfiguration::getLocationPostListDefaultLimit(),
                     'post-status' => [
                         \POP_POSTSTATUS_PUBLISHED,
                     ],

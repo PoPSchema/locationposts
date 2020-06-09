@@ -6,6 +6,9 @@ namespace PoP\LocationPosts;
 
 class Environment
 {
+    public const LOCATIONPOST_LIST_DEFAULT_LIMIT = 'LOCATIONPOST_LIST_DEFAULT_LIMIT';
+    public const LOCATIONPOST_LIST_MAX_LIMIT = 'LOCATIONPOST_LIST_MAX_LIMIT';
+
     /**
      * Customize the Location Post type name
      *
