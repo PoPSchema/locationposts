@@ -82,7 +82,10 @@ class Component extends AbstractComponent
      */
     protected static function attachTypeResolverPickers()
     {
-        if (Environment::addLocationPostTypeToContentEntityUnionTypes()) {
+        if (Environment::addLocationPostTypeToContentEntityUnionTypes()
+            // If $skipSchema is `true`, then services are not registered
+            && !empty(ContainerBuilderUtils::getServiceClassesUnderNamespace(__NAMESPACE__ . '\\TypeResolverPickers'))
+        ) {
             LocationPostContentEntityTypeResolverPicker::attach(AttachableExtensionGroups::TYPERESOLVERPICKERS);
         }
     }
