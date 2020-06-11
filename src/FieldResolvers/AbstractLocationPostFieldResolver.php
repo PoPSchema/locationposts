@@ -12,7 +12,7 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
 use PoP\LocationPosts\ComponentConfiguration;
-use PoP\Content\Types\Status;
+use PoP\CustomPosts\Types\Status;
 
 abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldResolver
 {
