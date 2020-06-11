@@ -36,5 +36,5 @@ interface LocationPostTypeAPIInterface
      * @param [type] $id
      * @return void
      */
-    public function getLocationPosts($query, array $options = []);
+    public function getLocationPosts($query, array $options = []): array;
 }
