@@ -22,7 +22,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     public static function getFieldNamesToResolve(): array
     {
         return [
-            'cats',
+            'categories',
             'catSlugs',
             'catName',
         ];
@@ -31,7 +31,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-            'cats' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
+            'categories' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
             'catSlugs' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
             'catName' => SchemaDefinition::TYPE_STRING,
         ];
@@ -41,7 +41,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     public function isSchemaFieldResponseNonNullable(TypeResolverInterface $typeResolver, string $fieldName): bool
     {
         $nonNullableFieldNames = [
-            'cats',
+            'categories',
             'catSlugs',
         ];
         if (in_array($fieldName, $nonNullableFieldNames)) {
@@ -54,7 +54,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-            'cats' => $translationAPI->__('', ''),
+            'categories' => $translationAPI->__('', ''),
             'catSlugs' => $translationAPI->__('', ''),
             'catName' => $translationAPI->__('', ''),
         ];
@@ -66,7 +66,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
         $taxonomyapi = \PoP\Taxonomies\FunctionAPIFactory::getInstance();
         $locationpost = $resultItem;
         switch ($fieldName) {
-            case 'cats':
+            case 'categories':
                 return $taxonomyapi->getPostTaxonomyTerms(
                     $typeResolver->getID($locationpost),
                     POP_LOCATIONPOSTS_TAXONOMY_CATEGORY,
@@ -85,7 +85,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
                 );
 
             case 'catName':
-                $cat = $typeResolver->resolveValue($resultItem, 'cat', $variables, $expressions, $options);
+                $cat = $typeResolver->resolveValue($resultItem, 'mainCategory', $variables, $expressions, $options);
                 if (GeneralUtils::isError($cat)) {
                     return $cat;
                 } elseif ($cat) {
