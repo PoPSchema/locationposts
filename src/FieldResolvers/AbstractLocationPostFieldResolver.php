@@ -79,7 +79,7 @@ abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldR
             case 'locationposts':
                 return [
                     'limit' => ComponentConfiguration::getLocationPostListDefaultLimit(),
-                    'post-status' => [
+                    'custom-post-status' => [
                         Status::PUBLISHED,
                     ],
                 ];
