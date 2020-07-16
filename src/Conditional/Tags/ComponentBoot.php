@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\Conditional\Taxonomies;
+namespace PoP\LocationPosts\Conditional\Tags;
 
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
 

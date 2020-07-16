@@ -35,7 +35,7 @@ class Component extends AbstractComponent
     {
         return [
             \PoP\Users\Component::class,
-            \PoP\Taxonomies\Component::class,
+            \PoP\Tags\Component::class,
         ];
     }
 
@@ -67,8 +67,8 @@ class Component extends AbstractComponent
         self::attachTypeResolverPickers();
 
         // Boot conditionals
-        if (class_exists('\PoP\Taxonomies\Component')) {
-            \PoP\LocationPosts\Conditional\Taxonomies\ComponentBoot::beforeBoot();
+        if (class_exists('\PoP\Tags\Component')) {
+            \PoP\LocationPosts\Conditional\Tags\ComponentBoot::beforeBoot();
         }
         if (class_exists('\PoP\Users\Component')) {
             \PoP\LocationPosts\Conditional\Users\ComponentBoot::beforeBoot();

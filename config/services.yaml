@@ -3,6 +3,6 @@ services:
         resource: '../src/Conditional/Users/FieldResolvers/*'
         public: true
 
-    PoP\LocationPosts\Conditional\Taxonomies\FieldResolvers\:
+    PoP\LocationPosts\Conditional\Tags\FieldResolvers\:
         resource: '../src/Conditional/Taxonomies/FieldResolvers/*'
         public: true
