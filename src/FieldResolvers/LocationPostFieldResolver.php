@@ -67,7 +67,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
         $locationpost = $resultItem;
         switch ($fieldName) {
             case 'categories':
-                return $taxonomyapi->getPostTaxonomyTerms(
+                return $taxonomyapi->getCustomPostTaxonomyTerms(
                     $typeResolver->getID($locationpost),
                     POP_LOCATIONPOSTS_TAXONOMY_CATEGORY,
                     [
@@ -76,7 +76,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
                 );
 
             case 'catSlugs':
-                return $taxonomyapi->getPostTaxonomyTerms(
+                return $taxonomyapi->getCustomPostTaxonomyTerms(
                     $typeResolver->getID($locationpost),
                     POP_LOCATIONPOSTS_TAXONOMY_CATEGORY,
                     [
