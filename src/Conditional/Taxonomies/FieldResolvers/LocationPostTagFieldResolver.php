@@ -7,7 +7,7 @@ namespace PoP\LocationPosts\Conditional\Taxonomies\FieldResolvers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\LocationPosts\FieldResolvers\AbstractLocationPostFieldResolver;
-use PoP\Taxonomies\TypeResolvers\TagTypeResolver;
+use PoP\Tags\TypeResolvers\TagTypeResolver;
 
 class LocationPostTagFieldResolver extends AbstractLocationPostFieldResolver
 {
