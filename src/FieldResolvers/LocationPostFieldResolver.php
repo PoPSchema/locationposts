@@ -71,7 +71,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
                     $typeResolver->getID($locationpost),
                     POP_LOCATIONPOSTS_TAXONOMY_CATEGORY,
                     [
-                        'return-type' => POP_RETURNTYPE_IDS,
+                        'return-type' => \POP_RETURNTYPE_IDS,
                     ]
                 );
 
