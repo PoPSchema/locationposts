@@ -16,7 +16,7 @@ class Environment
      */
     public static function getLocationPostTypeName(): ?string
     {
-        return $_ENV['LOCATION_POST_TYPE_NAME'];
+        return isset($_ENV['LOCATION_POST_TYPE_NAME']) ? $_ENV['LOCATION_POST_TYPE_NAME'] : null;
     }
     public static function addLocationPostTypeToCustomPostUnionTypes(): bool
     {
