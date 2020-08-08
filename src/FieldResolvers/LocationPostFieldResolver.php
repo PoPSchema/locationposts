@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\FieldResolvers;
+namespace PoPSchema\LocationPosts\FieldResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
-use PoP\LocationPosts\TypeResolvers\LocationPostTypeResolver;
+use PoPSchema\LocationPosts\TypeResolvers\LocationPostTypeResolver;
 use PoP\ComponentModel\Misc\GeneralUtils;
 
 class LocationPostFieldResolver extends AbstractDBDataFieldResolver
@@ -63,7 +63,7 @@ class LocationPostFieldResolver extends AbstractDBDataFieldResolver
 
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
-        $taxonomyapi = \PoP\Taxonomies\FunctionAPIFactory::getInstance();
+        $taxonomyapi = \PoPSchema\Taxonomies\FunctionAPIFactory::getInstance();
         $locationpost = $resultItem;
         switch ($fieldName) {
             case 'categories':

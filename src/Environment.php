@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts;
+namespace PoPSchema\LocationPosts;
 
 class Environment
 {

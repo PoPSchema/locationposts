@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\TypeResolverPickers\Optional;
+namespace PoPSchema\LocationPosts\TypeResolverPickers\Optional;
 
-use PoP\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
-use PoP\LocationPosts\TypeResolverPickers\AbstractLocationPostTypeResolverPicker;
+use PoPSchema\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
+use PoPSchema\LocationPosts\TypeResolverPickers\AbstractLocationPostTypeResolverPicker;
 
 class LocationPostCustomPostTypeResolverPicker extends AbstractLocationPostTypeResolverPicker
 {

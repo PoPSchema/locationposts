@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\TypeDataLoaders;
+namespace PoPSchema\LocationPosts\TypeDataLoaders;
 
-use PoP\Posts\TypeDataLoaders\PostTypeDataLoader;
-use PoP\LocationPosts\Facades\LocationPostTypeAPIFacade;
+use PoPSchema\Posts\TypeDataLoaders\PostTypeDataLoader;
+use PoPSchema\LocationPosts\Facades\LocationPostTypeAPIFacade;
 
 class LocationPostTypeDataLoader extends PostTypeDataLoader
 {

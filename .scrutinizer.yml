@@ -3,8 +3,8 @@ build:
         analysis:
             dependencies:
                 before:
-                    - composer require --dev getpop/users
-                    - composer require --dev getpop/taxonomies
+                    - composer require --dev pop-schema/users
+                    - composer require --dev pop-schema/taxonomies
             project_setup:
                 override: true
             tests:

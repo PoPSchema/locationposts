@@ -1,8 +1,8 @@
 services:
-    PoP\LocationPosts\Conditional\Users\FieldResolvers\:
+    PoPSchema\LocationPosts\Conditional\Users\FieldResolvers\:
         resource: '../src/Conditional/Users/FieldResolvers/*'
         public: true
 
-    PoP\LocationPosts\Conditional\Tags\FieldResolvers\:
+    PoPSchema\LocationPosts\Conditional\Tags\FieldResolvers\:
         resource: '../src/Conditional/Tags/FieldResolvers/*'
         public: true

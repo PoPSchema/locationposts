@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\Conditional\Users;
+namespace PoPSchema\LocationPosts\Conditional\Users;
 
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
 

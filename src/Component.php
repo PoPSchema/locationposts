@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts;
+namespace PoPSchema\LocationPosts;
 
-use PoP\LocationPosts\Environment;
+use PoPSchema\LocationPosts\Environment;
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
 use PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups;
-use PoP\LocationPosts\TypeResolverPickers\Optional\LocationPostCustomPostTypeResolverPicker;
+use PoPSchema\LocationPosts\TypeResolverPickers\Optional\LocationPostCustomPostTypeResolverPicker;
 
 /**
  * Initialize component
@@ -22,7 +22,7 @@ class Component extends AbstractComponent
     public static function getDependedComponentClasses(): array
     {
         return [
-            \PoP\Posts\Component::class,
+            \PoPSchema\Posts\Component::class,
         ];
     }
 
@@ -34,8 +34,8 @@ class Component extends AbstractComponent
     public static function getDependedConditionalComponentClasses(): array
     {
         return [
-            \PoP\Users\Component::class,
-            \PoP\Tags\Component::class,
+            \PoPSchema\Users\Component::class,
+            \PoPSchema\Tags\Component::class,
         ];
     }
 
@@ -67,11 +67,11 @@ class Component extends AbstractComponent
         self::attachTypeResolverPickers();
 
         // Boot conditionals
-        if (class_exists('\PoP\Tags\Component')) {
-            \PoP\LocationPosts\Conditional\Tags\ComponentBoot::beforeBoot();
+        if (class_exists('\PoPSchema\Tags\Component')) {
+            \PoPSchema\LocationPosts\Conditional\Tags\ComponentBoot::beforeBoot();
         }
-        if (class_exists('\PoP\Users\Component')) {
-            \PoP\LocationPosts\Conditional\Users\ComponentBoot::beforeBoot();
+        if (class_exists('\PoPSchema\Users\Component')) {
+            \PoPSchema\LocationPosts\Conditional\Users\ComponentBoot::beforeBoot();
         }
     }
 

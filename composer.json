@@ -1,5 +1,5 @@
 {
-    "name": "getpop/locationposts",
+    "name": "pop-schema/locationposts",
     "type": "library",
     "description": "Adds support for locationposts",
     "keywords": [
@@ -19,27 +19,27 @@
     "prefer-stable": true,
     "require": {
         "php": "~7.2",
-        "getpop/posts": "dev-master"
+        "pop-schema/posts": "dev-master"
     },
     "require-dev": {
-        "getpop/users": "dev-master",
-        "getpop/tags": "dev-master",
+        "pop-schema/users": "dev-master",
+        "pop-schema/tags": "dev-master",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": ">=8.5",
         "squizlabs/php_codesniffer": "^3.0"
     },
     "suggest": {
-        "getpop/users": "Integrates well with Users",
-        "getpop/tags": "Integrates well with Tags"
+        "pop-schema/users": "Integrates well with Users",
+        "pop-schema/tags": "Integrates well with Tags"
     },
     "autoload": {
         "psr-4": {
-            "PoP\\LocationPosts\\": "src"
+            "PoPSchema\\LocationPosts\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\LocationPosts\\": "tests"
+            "PoPSchema\\LocationPosts\\": "tests"
         }
     },
     "scripts": {

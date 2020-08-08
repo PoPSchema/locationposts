@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\FieldResolvers;
+namespace PoPSchema\LocationPosts\FieldResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\Engine\TypeResolvers\RootTypeResolver;
-use PoP\LocationPosts\FieldResolvers\AbstractLocationPostFieldResolver;
+use PoPSchema\LocationPosts\FieldResolvers\AbstractLocationPostFieldResolver;
 
 class RootLocationPostFieldResolver extends AbstractLocationPostFieldResolver
 {

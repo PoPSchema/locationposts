@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\Conditional\Tags\FieldResolvers;
+namespace PoPSchema\LocationPosts\Conditional\Tags\FieldResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\LocationPosts\FieldResolvers\AbstractLocationPostFieldResolver;
-use PoP\Tags\TypeResolvers\TagTypeResolver;
+use PoPSchema\LocationPosts\FieldResolvers\AbstractLocationPostFieldResolver;
+use PoPSchema\Tags\TypeResolvers\TagTypeResolver;
 
 class LocationPostTagFieldResolver extends AbstractLocationPostFieldResolver
 {

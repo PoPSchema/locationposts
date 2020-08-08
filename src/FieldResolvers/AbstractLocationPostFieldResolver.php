@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PoP\LocationPosts\FieldResolvers;
+namespace PoPSchema\LocationPosts\FieldResolvers;
 
-use PoP\LocationPosts\Facades\LocationPostTypeAPIFacade;
-use PoP\LocationPosts\TypeResolvers\LocationPostTypeResolver;
+use PoPSchema\LocationPosts\Facades\LocationPostTypeAPIFacade;
+use PoPSchema\LocationPosts\TypeResolvers\LocationPostTypeResolver;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
-use PoP\LocationPosts\ComponentConfiguration;
-use PoP\CustomPosts\Types\Status;
+use PoPSchema\LocationPosts\ComponentConfiguration;
+use PoPSchema\CustomPosts\Types\Status;
 
 abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldResolver
 {
