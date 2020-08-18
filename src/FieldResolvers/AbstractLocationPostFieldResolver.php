@@ -13,6 +13,7 @@ use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractQueryableFieldResolver;
 use PoPSchema\LocationPosts\ComponentConfiguration;
 use PoPSchema\CustomPosts\Types\Status;
+use PoPSchema\SchemaCommons\DataLoading\ReturnTypes;
 
 abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldResolver
 {
@@ -94,7 +95,7 @@ abstract class AbstractLocationPostFieldResolver extends AbstractQueryableFieldR
             case 'locationposts':
                 $query = $this->getQuery($typeResolver, $resultItem, $fieldName, $fieldArgs);
                 $options = [
-                    'return-type' => \POP_RETURNTYPE_IDS,
+                    'return-type' => ReturnTypes::IDS,
                 ];
                 $this->addFilterDataloadQueryArgs($options, $typeResolver, $fieldName, $fieldArgs);
                 return $locationPostTypeAPI->getLocationPosts($query, $options);
