@@ -7,14 +7,20 @@ namespace PoPSchema\LocationPosts\Conditional\Tags\FieldResolvers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoPSchema\LocationPosts\FieldResolvers\AbstractLocationPostFieldResolver;
-use PoPSchema\Tags\TypeResolvers\TagTypeResolver;
+// use PoPSchema\LocationTags\TypeResolvers\LocationTagTypeResolver;
 
-class LocationPostTagFieldResolver extends AbstractLocationPostFieldResolver
+/**
+ * Fields for event tags
+ *
+ * @author Leonardo Losoviz <leo@getpop.org>
+ * @todo Create LocationTagTypeResolver class, then remove abstract
+ */
+abstract class LocationPostTagFieldResolver extends AbstractLocationPostFieldResolver
 {
-    public static function getClassesToAttachTo(): array
-    {
-        return array(TagTypeResolver::class);
-    }
+    // public static function getClassesToAttachTo(): array
+    // {
+    //     return array(LocationTagTypeResolver::class);
+    // }
 
     public function getSchemaFieldDescription(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
