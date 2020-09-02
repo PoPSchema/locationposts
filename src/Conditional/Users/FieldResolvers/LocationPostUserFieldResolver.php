@@ -25,8 +25,16 @@ class LocationPostUserFieldResolver extends AbstractLocationPostFieldResolver
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
 
-    protected function getQuery(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = []): array
-    {
+    /**
+     * @param array<string, mixed> $fieldArgs
+     * @return array<string, mixed>
+     */
+    protected function getQuery(
+        TypeResolverInterface $typeResolver,
+        object $resultItem,
+        string $fieldName,
+        array $fieldArgs = []
+    ): array {
 
         $query = parent::getQuery($typeResolver, $resultItem, $fieldName, $fieldArgs);
 
