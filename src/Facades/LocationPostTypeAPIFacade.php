@@ -11,6 +11,10 @@ class LocationPostTypeAPIFacade
 {
     public static function getInstance(): LocationPostTypeAPIInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('locationpost_type_api');
+        /**
+         * @var LocationPostTypeAPIInterface
+         */
+        $service = ContainerBuilderFactory::getInstance()->get('locationpost_type_api');
+        return $service;
     }
 }
