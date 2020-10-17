@@ -16,10 +16,10 @@ class Environment
      */
     public static function getLocationPostTypeName(): ?string
     {
-        return isset($_ENV['LOCATION_POST_TYPE_NAME']) ? $_ENV['LOCATION_POST_TYPE_NAME'] : null;
+        return getenv('LOCATION_POST_TYPE_NAME') !== false ? getenv('LOCATION_POST_TYPE_NAME') : null;
     }
     public static function addLocationPostTypeToCustomPostUnionTypes(): bool
     {
-        return isset($_ENV['ADD_LOCATIONPOST_TYPE_TO_CUSTOMPOST_UNION_TYPES']) ? strtolower($_ENV['ADD_LOCATIONPOST_TYPE_TO_CUSTOMPOST_UNION_TYPES']) == "true" : false;
+        return getenv('ADD_LOCATIONPOST_TYPE_TO_CUSTOMPOST_UNION_TYPES') !== false ? strtolower(getenv('ADD_LOCATIONPOST_TYPE_TO_CUSTOMPOST_UNION_TYPES')) == "true" : false;
     }
 }
