@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\LocationPosts\TypeResolverPickers\Optional;
+namespace PoPSchema\LocationPosts\ConditionalOnEnvironment\AddLocationPostTypeToCustomPostUnionTypes\SchemaServices\TypeResolverPickers;
 
 use PoPSchema\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
 use PoPSchema\LocationPosts\TypeResolverPickers\AbstractLocationPostTypeResolverPicker;
